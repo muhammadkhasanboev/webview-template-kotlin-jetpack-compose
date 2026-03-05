@@ -14,7 +14,6 @@ import androidx.compose.ui.viewinterop.AndroidView
 @Composable
 fun WebViewScreen(url: String){
     val context = LocalContext.current
-
     val onBackPressedDispatcher = LocalOnBackPressedDispatcherOwner.current?.onBackPressedDispatcher
 
     val webView = remember {
@@ -39,6 +38,9 @@ fun WebViewScreen(url: String){
             override fun handleOnBackPressed(){
                 if(webView.canGoBack()){
                     webView.goBack()
+                }else{
+                    isEnabled = false
+                    onBackPressedDispatcher?.onBackPressed()
                 }
             }
         }
