@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             WebviewkotlinjetpackcomposeTheme {
-                WebViewScreen("https://google.com")
+                WebViewScreen("https://barberbookuz.netlify.app/")
             }
         }
     }
